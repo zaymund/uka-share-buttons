@@ -1,0 +1,11 @@
+.share-links {
+  font-size: 16px;
+}
+
+.share-links > :not(:last-child) {
+  margin-right: .5rem;
+}
+
+.share-links__title {
+  color: #757575;
+}
