@@ -21,6 +21,11 @@ The quickest method for installing the importer is:
 2. Click "Upload Plugin" and "Choose File", then select the plugin's .zip file. Click "Install Now".
 3. Click "Activate" to use plugin right away.
 
+== Frequently Asked Questions ==
+
+= What functions are available to use? =
+There is 1 function available to use: 'uka_share_buttons' returns html of share links.
+
 == Changelog ==
 
 = 1.0.0 - March 07 2020 =
