@@ -10,7 +10,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       uka-share-buttons
  * Domain Path:       /languages
- * 
+ *
  * @since             1.0.0
  * @package           Uka_Share_Buttons
  */
@@ -43,7 +43,6 @@ register_activation_hook( __FILE__, 'activate_uka_share_buttons' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-uka-share-buttons.php';
 
-
 /**
  * Create link for settings page.
  *
@@ -56,7 +55,6 @@ function uka_share_buttons_settings_link( $settings ) {
 
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'uka_share_buttons_settings_link' );
-
 
 /**
  * Begins execution of the plugin.
