@@ -42,7 +42,7 @@ msgstr ""
 msgid "Reddit"
 msgstr ""
 
-#: uka-share-buttons.php:54
+#: uka-share-buttons.php:53
 msgid "Settings"
 msgstr ""
 
