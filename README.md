@@ -1,4 +1,4 @@
-=== Uka Share Buttons ===
+# Uka Share Buttons #
 Contributors: UkaThemes
 Tags: share buttons, wordpress
 Requires at least: 4.7
@@ -9,11 +9,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds Share Buttons for posts and pages.
 
-== Description ==
+## Description ##
 
 A simple, customisable share buttons solution designed specifically for theme developers.
 
-== Installation ==
+## Installation ##
 
 The quickest method for installing the importer is:
 
@@ -21,12 +21,12 @@ The quickest method for installing the importer is:
 2. Click "Upload Plugin" and "Choose File", then select the plugin's .zip file. Click "Install Now".
 3. Click "Activate" to use plugin right away.
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions ##
 
-= What functions are available to use? =
+**What functions are available to use?**
 There is 1 function available to use: 'uka_share_buttons' returns html of share links.
 
-== Changelog ==
+## Changelog ##
 
-= 1.0.0 - March 07 2020 =
+**1.0.0 - March 07 2020**
 * Initial release.
