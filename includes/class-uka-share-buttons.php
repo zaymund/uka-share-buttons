@@ -60,7 +60,7 @@ class Uka_Share_Buttons {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		
+
 		if ( defined( 'UKA_SHARE_BUTTONS_VERSION' ) ) {
 			$this->version = UKA_SHARE_BUTTONS_VERSION;
 		} else {
@@ -123,10 +123,10 @@ class Uka_Share_Buttons {
 	/**
 	 * Returns all the supported services.
 	 *
-	 * %1$s = url
-	 * %2$s = title
-	 * %3$s = image
-	 * 
+	 * %1$s - url
+	 * %2$s - title
+	 * %3$s - image
+	 *
 	 * @since     1.0.0
 	 * @return    string    Supported services.
 	 */
