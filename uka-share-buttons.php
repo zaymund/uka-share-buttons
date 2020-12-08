@@ -3,7 +3,7 @@
  * Plugin Name:       Uka Share Buttons
  * Plugin URI:        https://ukathemes.com/
  * Description:       Adds Share Buttons for posts and pages.
- * Version:           1.0.1
+ * Version:           1.1.0
  * Author:            UkaThemes
  * Author URI:        https://ukathemes.com/
  * License:           GPL-2.0+
@@ -11,7 +11,7 @@
  * Text Domain:       uka-share-buttons
  * Domain Path:       /languages
  *
- * @since             1.0.0
+ * @since             1.1.0
  * @package           Uka_Share_Buttons
  */
 
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'UKA_SHARE_BUTTONS_VERSION', '1.0.1' );
+define( 'UKA_SHARE_BUTTONS_VERSION', '1.1.0' );
 
 /**
  * The code that runs during plugin activation.

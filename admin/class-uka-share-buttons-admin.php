@@ -2,7 +2,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Uka_Share_Buttons
  * @subpackage Uka_Share_Buttons/admin
@@ -46,17 +46,6 @@ class Uka_Share_Buttons_Admin {
 		);
 
 		add_settings_field(
-			'social_services',
-			esc_html__( 'Social Services', 'uka-share-buttons' ),
-			array( $this, 'social_services_field'),
-			'share-buttons',
-			'main_settings',
-			array(
-				'label_for' => 'social_services',
-			)
-		);
-
-		add_settings_field(
 			'share_text',
 			esc_html__( 'Share Text', 'uka-share-buttons' ),
 			array( $this, 'share_text_field'),
@@ -67,15 +56,27 @@ class Uka_Share_Buttons_Admin {
 			)
 		);
 
+		add_settings_field(
+			'social_services',
+			esc_html__( 'Social Services', 'uka-share-buttons' ),
+			array( $this, 'social_services_field'),
+			'share-buttons',
+			'main_settings',
+			array(
+				'label_for' => 'social_services',
+			)
+		);
+
 	}
 
 	/**
 	 * Sanitize_options for settings page.
 	 *
-	 * @since    1.0.0
+	 * @since    1.1.0
 	 */
 	public function sanitize_options( $input ) {
 
+		$input[ 'share_text' ] = sanitize_text_field( $input[ 'share_text' ] );
 		$input[ 'facebook' ] = sanitize_text_field( $input[ 'facebook' ] );
 		$input[ 'twitter' ] = sanitize_text_field( $input[ 'twitter' ] );
 		$input[ 'reddit' ] = sanitize_text_field( $input[ 'reddit' ] );
@@ -83,7 +84,16 @@ class Uka_Share_Buttons_Admin {
 		$input[ 'pinterest' ] = sanitize_text_field( $input[ 'pinterest' ] );
 		$input[ 'telegram' ] = sanitize_text_field( $input[ 'telegram' ] );
 		$input[ 'vk' ] = sanitize_text_field( $input[ 'vk' ] );
-		$input[ 'share_text' ] = sanitize_text_field( $input[ 'share_text' ] );
+		$input[ 'whatsapp' ] = sanitize_text_field( $input[ 'whatsapp' ] );
+		$input[ 'skype' ] = sanitize_text_field( $input[ 'skype' ] );
+		$input[ 'google' ] = sanitize_text_field( $input[ 'google' ] );
+		$input[ 'pocket' ] = sanitize_text_field( $input[ 'pocket' ] );
+		$input[ 'ok' ] = sanitize_text_field( $input[ 'ok' ] );
+		$input[ 'evernote' ] = sanitize_text_field( $input[ 'evernote' ] );
+		$input[ 'tumblr' ] = sanitize_text_field( $input[ 'tumblr' ] );
+		$input[ 'blogger' ] = sanitize_text_field( $input[ 'blogger' ] );
+		$input[ 'livejournal' ] = sanitize_text_field( $input[ 'livejournal' ] );
+		$input[ 'email' ] = sanitize_text_field( $input[ 'email' ] );
 
 		return $input;
 
@@ -92,19 +102,29 @@ class Uka_Share_Buttons_Admin {
 	/**
 	 * Output the social services settings field.
 	 *
-	 * @since    1.0.0
+	 * @since    1.1.0
 	 */
 	public function social_services_field() {
 
 		$options = get_option( 'uka_share_buttons_options' );
 
-		$facebook  = $options[ 'services-settings' ][ 'facebook' ];
-		$twitter   = $options[ 'services-settings' ][ 'twitter' ];
-		$reddit    = $options[ 'services-settings' ][ 'reddit' ];
-		$linkedin  = $options[ 'services-settings' ][ 'linkedin' ];
-		$pinterest = $options[ 'services-settings' ][ 'pinterest' ];
-		$telegram  = $options[ 'services-settings' ][ 'telegram' ];
-		$vk        = $options[ 'services-settings' ][ 'vk' ];
+		$facebook    = $options[ 'services-settings' ][ 'facebook' ];
+		$twitter     = $options[ 'services-settings' ][ 'twitter' ];
+		$reddit      = $options[ 'services-settings' ][ 'reddit' ];
+		$linkedin    = $options[ 'services-settings' ][ 'linkedin' ];
+		$pinterest   = $options[ 'services-settings' ][ 'pinterest' ];
+		$telegram    = $options[ 'services-settings' ][ 'telegram' ];
+		$vk          = $options[ 'services-settings' ][ 'vk' ];
+		$whatsapp    = $options[ 'services-settings' ][ 'whatsapp' ];
+		$skype       = $options[ 'services-settings' ][ 'skype' ];
+		$google      = $options[ 'services-settings' ][ 'google' ];
+		$pocket      = $options[ 'services-settings' ][ 'pocket' ];
+		$ok          = $options[ 'services-settings' ][ 'ok' ];
+		$evernote    = $options[ 'services-settings' ][ 'evernote' ];
+		$tumblr      = $options[ 'services-settings' ][ 'tumblr' ];
+		$blogger     = $options[ 'services-settings' ][ 'blogger' ];
+		$livejournal = $options[ 'services-settings' ][ 'livejournal' ];
+		$email       = $options[ 'services-settings' ][ 'email' ];
 
 		$html  = '<fieldset>';
 		$html  .= sprintf( '<legend class="screen-reader-text"><span>%1$s</span></legend>', esc_html__( 'Share Buttons Settings', 'uka-share-buttons' ) );
@@ -151,8 +171,68 @@ class Uka_Share_Buttons_Admin {
 		$html  .= sprintf( '%1$s</label>', esc_html__( 'VK', 'uka-share-buttons' ) );
 		$html  .= '<br />';
 
+		$html  .= '<label for="whatsapp">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][whatsapp]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="whatsapp" name="uka_share_buttons_options[services-settings][whatsapp]" value="on" %1$s />', checked( $whatsapp, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'WhatsApp', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="skype">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][skype]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="skype" name="uka_share_buttons_options[services-settings][skype]" value="on" %1$s />', checked( $skype, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Skype', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="google">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][google]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="google" name="uka_share_buttons_options[services-settings][google]" value="on" %1$s />', checked( $google, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Google Bookmarks', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="pocket">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][pocket]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="pocket" name="uka_share_buttons_options[services-settings][pocket]" value="on" %1$s />', checked( $pocket, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Pocket', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="ok">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][ok]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="ok" name="uka_share_buttons_options[services-settings][ok]" value="on" %1$s />', checked( $ok, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Odnoklassniki', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="evernote">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][evernote]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="evernote" name="uka_share_buttons_options[services-settings][evernote]" value="on" %1$s />', checked( $evernote, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Evernote', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="tumblr">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][tumblr]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="tumblr" name="uka_share_buttons_options[services-settings][tumblr]" value="on" %1$s />', checked( $tumblr, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Tumblr', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="blogger">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][blogger]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="blogger" name="uka_share_buttons_options[services-settings][blogger]" value="on" %1$s />', checked( $blogger, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Blogger', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="livejournal">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][livejournal]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="livejournal" name="uka_share_buttons_options[services-settings][livejournal]" value="on" %1$s />', checked( $livejournal, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'LiveJournal', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
+		$html  .= '<label for="email">';
+		$html  .= '<input type="hidden" name="uka_share_buttons_options[services-settings][email]" value="off" />';
+		$html  .= sprintf( '<input type="checkbox" class="checkbox" id="email" name="uka_share_buttons_options[services-settings][email]" value="on" %1$s />', checked( $email, 'on', false ) );
+		$html  .= sprintf( '%1$s</label>', esc_html__( 'Email', 'uka-share-buttons' ) );
+		$html  .= '<br />';
+
 		$html  .= '</fieldset>';
-	
+
 		echo $html;
 
 	}

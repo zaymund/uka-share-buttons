@@ -5,7 +5,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Uka_Share_Buttons
  * @subpackage Uka_Share_Buttons/includes
@@ -64,7 +64,7 @@ class Uka_Share_Buttons {
 		if ( defined( 'UKA_SHARE_BUTTONS_VERSION' ) ) {
 			$this->version = UKA_SHARE_BUTTONS_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.1.0';
 		}
 		$this->plugin_name = 'uka-share-buttons';
 
@@ -127,7 +127,7 @@ class Uka_Share_Buttons {
 	 * %2$s - title
 	 * %3$s - image
 	 *
-	 * @since     1.0.0
+	 * @since     1.1.0
 	 * @return    string    Supported services.
 	 */
 	public static function get_services() {
@@ -151,12 +151,12 @@ class Uka_Share_Buttons {
 			'linkedin' => array(
 				'id'    => 'linkedin',
 				'title' => esc_html__( 'LinkedIn' ),
-				'url'   => 'https://www.linkedin.com/shareArticle?mini=true&url=%1$s&title=%2$s',
+				'url'   => 'https://www.linkedin.com/sharing/share-offsite/?url=%1$s',
 			),
 			'pinterest' => array(
 				'id'    => 'pinterest',
 				'title' => esc_html__( 'Pinterest' ),
-				'url'   => 'https://www.pinterest.com/pin/create/button/?url=%1$s',
+				'url'   => 'http://pinterest.com/pin/create/button/?url=%1$s',
 			),
 			'telegram' => array(
 				'id'    => 'telegram',
@@ -167,6 +167,56 @@ class Uka_Share_Buttons {
 				'id'    => 'vk',
 				'title' => esc_html__( 'VK' ),
 				'url'   => 'http://vk.com/share.php?url=%1$s&title=%2$s',
+			),
+			'whatsapp' => array(
+				'id'    => 'whatsapp',
+				'title' => esc_html__( 'WhatsApp' ),
+				'url'   => 'https://api.whatsapp.com/send?text=%2$s %1$s',
+			),
+			'skype' => array(
+				'id'    => 'skype',
+				'title' => esc_html__( 'Skype' ),
+				'url'   => 'https://web.skype.com/share?url=%1$s&text=%2$s',
+			),
+			'google' => array(
+				'id'    => 'google',
+				'title' => esc_html__( 'Google Bookmarks' ),
+				'url'   => 'https://www.google.com/bookmarks/mark?op=edit&bkmk=%1$s&title=%2$s',
+			),
+			'pocket' => array(
+				'id'    => 'pocket',
+				'title' => esc_html__( 'Pocket' ),
+				'url'   => 'https://getpocket.com/edit?url=%1$s',
+			),
+			'ok' => array(
+				'id'    => 'ok',
+				'title' => esc_html__( 'Odnoklassniki' ),
+				'url'   => 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=%1$s',
+			),
+			'evernote' => array(
+				'id'    => 'evernote',
+				'title' => esc_html__( 'Evernote' ),
+				'url'   => 'https://www.evernote.com/clip.action?url=%1$s&title=%2$s',
+			),
+			'tumblr' => array(
+				'id'    => 'tumblr',
+				'title' => esc_html__( 'Tumblr' ),
+				'url'   => 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=%1$s&title=%2$s',
+			),
+			'blogger' => array(
+				'id'    => 'blogger',
+				'title' => esc_html__( 'Blogger' ),
+				'url'   => 'https://www.blogger.com/blog-this.g?u=%1$s&n=%2$s',
+			),
+			'livejournal' => array(
+				'id'    => 'livejournal',
+				'title' => esc_html__( 'LiveJournal' ),
+				'url'   => 'http://www.livejournal.com/update.bml?subject=%2$s&event=%1$s',
+			),
+			'email' => array(
+				'id'    => 'email',
+				'title' => esc_html__( 'Email' ),
+				'url'   => 'mailto:?subject=%2$s&body=%1$s',
 			),
 		);
 

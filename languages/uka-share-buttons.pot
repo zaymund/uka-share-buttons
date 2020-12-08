@@ -20,9 +20,25 @@ msgstr ""
 msgid "Adds Share Buttons for posts and pages."
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:115
+#: admin/class-uka-share-buttons-admin.php:219
+msgid "Blogger"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:231
+msgid "Email"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:207
+msgid "Evernote"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:135
 #: includes/class-uka-share-buttons.php:138
 msgid "Facebook"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:189
+msgid "Google Bookmarks"
 msgstr ""
 
 #. URI of the plugin
@@ -30,15 +46,27 @@ msgstr ""
 msgid "https://ukathemes.com/"
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:133
+#: admin/class-uka-share-buttons-admin.php:153
 msgid "Linkedin"
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:139
+#: admin/class-uka-share-buttons-admin.php:225
+msgid "LiveJournal"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:201
+msgid "Odnoklassniki"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:159
 msgid "Pinterest"
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:127
+#: admin/class-uka-share-buttons-admin.php:195
+msgid "Pocket"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:147
 msgid "Reddit"
 msgstr ""
 
@@ -51,24 +79,28 @@ msgid "Share Buttons"
 msgstr ""
 
 #: admin/class-uka-share-buttons-admin.php:21
-#: admin/class-uka-share-buttons-admin.php:110
-#: admin/class-uka-share-buttons-admin.php:183
+#: admin/class-uka-share-buttons-admin.php:130
+#: admin/class-uka-share-buttons-admin.php:263
 msgid "Share Buttons Settings"
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:61
+#: admin/class-uka-share-buttons-admin.php:50
 msgid "Share Text"
 msgstr ""
 
-#: includes/class-uka-share-buttons-activator.php:38
+#: includes/class-uka-share-buttons-activator.php:48
 msgid "Share:"
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:50
+#: admin/class-uka-share-buttons-admin.php:183
+msgid "Skype"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:61
 msgid "Social Services"
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:145
+#: admin/class-uka-share-buttons-admin.php:165
 msgid "Telegram"
 msgstr ""
 
@@ -79,7 +111,11 @@ msgid ""
 "%s. Please upgrade and try again."
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:121
+#: admin/class-uka-share-buttons-admin.php:213
+msgid "Tumblr"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:141
 msgid "Twitter"
 msgstr ""
 
@@ -91,6 +127,10 @@ msgstr ""
 msgid "UkaThemes"
 msgstr ""
 
-#: admin/class-uka-share-buttons-admin.php:151
+#: admin/class-uka-share-buttons-admin.php:171
 msgid "VK"
+msgstr ""
+
+#: admin/class-uka-share-buttons-admin.php:177
+msgid "WhatsApp"
 msgstr ""
