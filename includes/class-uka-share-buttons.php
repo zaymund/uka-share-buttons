@@ -234,18 +234,14 @@ class Uka_Share_Buttons {
 
 		$title = get_the_title();
 		$url = get_permalink();
-		$image_id = get_post_thumbnail_id();
-		$image_object = wp_get_attachment_image_src( $image_id, 'full' );
-		$image = $image_object[0];
 
 		$title = rawurlencode( $title );
 		$url = rawurlencode( $url );
-		$image = rawurlencode( $image );
 
 		$before_text = apply_filters( 'uka_share_buttons_before_share_text', '', $service );
 		$after_text = apply_filters( 'uka_share_buttons_after_share_text', '', $service );
 
-		$url = sprintf( $service[ 'url' ], $url, $title, $image );
+		$url = sprintf( $service[ 'url' ], $url, $title );
 
 		$html = sprintf( '<a href="%1$s" class="uka-share-button uka-share-button--%2$s" target="_blank">%4$s<span class="uka-share-button__text">%3$s</span>%5$s</a> ',
 			$url,
